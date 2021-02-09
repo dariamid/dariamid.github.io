@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My site</title>
+    <link rel="stylesheet" href="../personal.site-daria.mid/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+    <script type="text/javascript">
+        
+    var answer = parseInt(Math.random() * 100);    
+    var playerNumber = 1;
+        
+    function readInt(){
+    var number = document.getElementById("userAnswer").value;
+        return parseInt(number);
+    }
+    function write(text){
+        document.getElementById("info").innerHTML = text;
+}        
+ function hide(id){
+     document.getElementById(id).style.display = "none";
+ } 
+        
+        function guess() {        
+        var userAnswer = readInt();
+        if(userAnswer == answer){
+            write("<br>Congratulation! Win player № " + playerNumber + "</br>");
+            hide("button");
+            hide("userAnswer")
+        } else if(userAnswer > answer){
+            changePlayer();    
+            write("You entered to big number<br>Start player № " + playerNumber + "<b>Enter a number from 1 to 100")
+        } else if(userAnswer < answer){
+            changePlayer();  
+            write("You entered to small number<br>Start player № " + playerNumber + "<b>Enter a number from 1 to 100")
+        }
+        }
+    function changePlayer(){
+        if(playerNumber == 1)
+        playerNumber = 2;
+        else
+        playerNumber = 1;
+        
+    }        
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="content">
+            <a href="/index.html">Main</a>
+            <a href="/riddles.html">Riddles</a>
+            <a href="/guessIt.html">Guess It</a>
+            <a href="/guessIt2.html">Guess It Multiplayer</a>
+            <a href="password-generator.html">Password Generator</a>
+        </div>
+
+    </header>
+
+    <div class="contentWrap">
+        <div class="content">
+            <div class="center">
+                <h1>Guess It Multiplayer</h1>
+
+                <div class="box">
+                   <p id="info"><br>Guess a number from 1 to 100<br>Start player №1.</p>
+                   <input type="text" id="userAnswer">
+                   <br>
+                   <form>
+                      <button id="button"><a href="#" onClick="guess();">Start</a></button>
+                    </form>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div>
+            Copyright &copy; Dariia M
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
