@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My site</title>
+    <link rel="stylesheet" href="../personal.site-daria.mid/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+    <script type="text/javascript">
+    
+        var score = 0;
+
+        function checkAnswer(input, answers){
+            var userAnswer = document.querySelector("#input").value;
+            userAnswer = userAnswer.toLowerCase();
+            for (var i = 0; i < answers.length; i++){
+                if (userAnswer == answers[i]){
+                    score++;
+                    break;
+                }
+            }
+        }
+
+        function checkAnswers(){
+
+            checkAnswer("userAnswer1", ["dream", "sleep"]);
+            checkAnswer("userAnswer2" ["seasickness", "marine disease"]);
+            checkAnswer("userAnswer3", ["chess", "dead"]);
+
+            alert("You answered to " + score + " riddles")
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+       <div class="content">
+            <a href="index.html">Main</a>
+            <a href="/riddles.html">Riddles</a>
+            <a href="/guessIt.html">Guess It</a>
+            <a href="/guessIt2.html">Guess It Multiplayer</a>
+            <a href="password-generator.html">Password Generator</a>
+        </div>
+
+    </header>
+
+    <div class="contentWrap">
+        <div class="content">
+            <div class="center">
+                <h1>Riddles</h1>
+
+                <div class="box">
+
+
+                    <p>What you can see with closed eyes?</p>
+                    <input type="text" id="userAnswer1">
+                    <p>Which disease nobody can have on the land?</p>
+                    <input type="text" id="userAnswer2">
+                    <p>Witch horse doesn`t eat oats?</p>
+                    <input type="text" id="userAnswer3">
+                    
+                    <br>
+                        <form>
+                          <button><a href="#" onclick="checkAnswer();">Answer</a></button>
+                        </form>
+
+                   
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div>
+            Copyright &copy; Dariia M
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
